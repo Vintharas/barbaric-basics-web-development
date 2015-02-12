@@ -34,7 +34,7 @@
             var newFileName = getNewFileName();
             fileNames.push(newFileName); // TODO: sort alphabetically
 
-            var newFile = { name: newFileName, content: 'Start writing here in markdown...' };
+            var newFile = { name: newFileName, content: '' };
             localStorage.setItem(KEY_FILENAMES, fileNames);
             localStorage.setItem(newFileName, newFile);
 
