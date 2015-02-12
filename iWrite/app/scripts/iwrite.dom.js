@@ -75,6 +75,7 @@
         textArea.noResize = true;
         textArea.rows = 10;
         textArea.addEventListener('keypress', createOnEditorContentUpdated(onEditorContentUpdated));
+        textArea.placeholder = 'Start writing something here in markdown...';
         div.appendChild(textArea);
         content = document.querySelector('div.content');
         content.appendChild(div);
