@@ -1,4 +1,4 @@
-﻿(function(iwrite) {
+﻿(function (iwrite) {
     'use strict';
     function LocalStorage(prefix) {
         this.prefix = prefix;

@@ -58,7 +58,7 @@
         });
     }
 
-    function getOrCreateEditor(onReloadPreview) {
+    function getOrCreateEditor(onEditorContentUpdated) {
         var div,
             textArea,
             content;
@@ -74,17 +74,17 @@
         textArea.className = 'form-control noresize';
         textArea.noResize = true;
         textArea.rows = 10;
-        textArea.addEventListener('keypress', createReloadPreview(onReloadPreview));
+        textArea.addEventListener('keypress', createOnEditorContentUpdated(onEditorContentUpdated));
         div.appendChild(textArea);
         content = document.querySelector('div.content');
         content.appendChild(div);
         return textArea;
     }
 
-    function createReloadPreview(onReloadPreview) {
+    function createOnEditorContentUpdated(onEditorContentUpdated) {
         return function reloadPreview() {
             var editor = document.querySelector('div.editor textarea');
-            onReloadPreview(editor.value);
+            onEditorContentUpdated(editor.value);
         }
     }
 

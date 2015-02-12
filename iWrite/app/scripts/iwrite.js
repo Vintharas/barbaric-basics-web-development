@@ -1,9 +1,8 @@
-﻿(function (iwrite) {
+﻿(function (iwrite, data, DOM) {
     'use strict';
-    var fileNames,
-        KEY_FILENAMES = 'fileNames',
-        DOM = iwrite.DOM,
-        markdownParser = new Worker('scripts/markdownParser.js');
+    var filesRepository = data.getFileRepository(),
+        markdownParser = new Worker('scripts/markdownParser.js'),
+        currentlyOpenedFileName;
 
     markdownParser.onmessage = handleParsedHtml;
 
@@ -22,49 +21,39 @@
     }
 
     function loadExistingFiles() {
-        fileNames = iwrite.localStorage.getItem(KEY_FILENAMES) || [];
+        var fileNames = filesRepository.getFileNames();
         DOM.loadFilesInSidebar(fileNames, /* onClickFile */ openFile);
     }
 
     function addFile() {
-        var newFileNameTemplate = 'New File ',
-            newFileName = 'New File 1',
-            counter = 1;
-        while (filenameAlreadyExists(newFileName)) {
-            counter++;
-            newFileName = newFileNameTemplate + counter.toString();
-        }
-
-        fileNames.push(newFileName); // TODO: sort alphabetically
-
-        iwrite.localStorage.setItem(KEY_FILENAMES, fileNames);
-        iwrite.localStorage.setItem(newFileName, {name: newFileName, content: 'Start writing here in markdown...'});
-
-        DOM.loadFilesInSidebar(newFileName, /* onClickFile */ openFile);
-
-        function filenameAlreadyExists(newFileName) {
-            return fileNames.some(function(fileName) { return newFileName === fileName; });
-        }
+        var newFile = filesRepository.createNewFile();
+        DOM.loadFilesInSidebar(newFile.name, /* onClickFile */ openFile);
     }
 
     function openFile() {
         var fileName = this.text;
+        currentlyOpenedFileName = fileName;
         DOM.setFileListItemAsActive(this);
         this.className = 'list-group-item active';
         console.log('opening file: ' + fileName);
-        var file = iwrite.localStorage.getItem(fileName);
+        var file = filesRepository.getFile(fileName);
         loadContent(file.content);
         loadPreview(file.content);
     }
 
     function loadContent(fileContent) {
         console.log('Open editor with content: ' + fileContent);
-        var editor = DOM.getOrCreateEditor(/* onReloadPreview */ computePreview);
+        var editor = DOM.getOrCreateEditor(/* onEditorUpdated */ updateFileAndcomputePreview);
         editor.value = fileContent;
     }
 
     function loadPreview(fileContent) {
         DOM.getOrCreatePreview();
+        computePreview(fileContent);
+    }
+
+    function updateFileAndcomputePreview(fileContent) {
+        filesRepository.updateFile(currentlyOpenedFileName, fileContent);
         computePreview(fileContent);
     }
 
@@ -79,5 +68,5 @@
         DOM.setPreviewContent(parsedHtml);
     }
 
-}(window.iwrite = window.iwrite || {}));
+}(window.iwrite = window.iwrite || {}, window.iwrite.data, window.iwrite.DOM)); /* injecting dependencies old school */
 
