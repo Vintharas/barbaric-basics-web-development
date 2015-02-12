@@ -1,4 +1,5 @@
-﻿/*
+﻿'use strict';
+/*
 
 Parses markdown into html
 

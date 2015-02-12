@@ -35,20 +35,22 @@
             <button id="add-image" type="button" class="btn btn-default navbar-btn" title="New image"><i class="glyphicon glyphicon-pencil"></i></button>
 
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="/about.html">About</a></li>
+                <li><a href="/">Home</a></li>
+                <li class="active"><a href="#">About</a></li>
             </ul>
 
         </div>
     </header>
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="sidebar col-sm-2 col-md-2">
-                <div class="list-group"></div>
-            </div>
-            <div class="content col-sm-10 col-md-10">
-
+            <div class="col-md-8 col-md-offset-2">
+                This project was made by <a href="http://www.barbarianmeetscoding.com">barbarianmeetscoding.com</a>
+                and is powered by <a href="http://vanilla-js.com/">VanillaJS</a>.
+                <div class="vanilla">
+                    <span>VanillaJS</span>
+                    <img src="http://vanilla-js.com/assets/vanillin-chemstruct.png" />
+                </div>
             </div>
         </div>
     </div>
@@ -84,10 +86,6 @@
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
-    <script src="scripts/iwrite.localstorage.js"></script>
-    <script src="scripts/iwrite.data.js"></script>
-    <script src="scripts/iwrite.dom.js"></script>
-    <script src="scripts/iwrite.js"></script>
     <!-- endbuild -->
 </body>
 </html>
