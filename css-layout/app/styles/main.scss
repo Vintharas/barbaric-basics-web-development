@@ -60,6 +60,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     font: bold 3em Arial;
     color: #222;
 }
+.box.smaller{
+    width: 100px;
+    min-height: 100px;
+}
 
 .box pre{
     font-weight: 100;
