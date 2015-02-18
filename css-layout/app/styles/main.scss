@@ -44,6 +44,15 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     align-items: stretch;
 }
 
+.flexbox-container.align-content-start{
+    align-content: flex-start;
+}
+
+.flexbox-container.align-content-spacebetween{
+    align-content: space-between;
+}
+
+
 .box.centered{
     align-self: center;
 }

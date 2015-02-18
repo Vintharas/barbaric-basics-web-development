@@ -1,6 +1,6 @@
 ﻿<!doctype html>
 <html class="no-js">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>css layout</title>
     <meta name="description" content="">
@@ -11,6 +11,7 @@
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
+    <link rel="stylesheet" href="styles/prism.css">
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -18,10 +19,10 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
-  </head>
+</head>
 <body>
     <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <header class="navbar navbar-default">
         <div class="container-fluid">
@@ -48,6 +49,16 @@
                 </div>
                 <section>
                     <h1>Flex-box Basics</h1>
+                    <nav>
+                        <ol>
+                            <li><a href="#flexbox-basic">Basic Flexbox</a></li>
+                            <li><a href="#flexbox-wrap">Flexbox Wrapping</a></li>
+                            <li><a href="#flexbox-direction">Flexbox Direction</a></li>
+                            <li><a href="#flexbox-order">Flexbox Order</a></li>
+                            <li><a href="#flexbox-automatic-sizing">Flexbox Automatic Sizing</a></li>
+                            <li><a href="#flexbox-alignment">Flexbox Alignment</a></li>
+                        </ol>     
+                    </nav>
                     <!-- Flexbox Basic -->
                     <section>
                         <h2 id="flexbox-basic">Flex-box </h2>
@@ -57,8 +68,7 @@
                         </p>
                         <div class="flexbox-container">
                             <div class="box fill">
-                                <pre>
-.flexbox-container{
+<pre><code class="language-css">.flexbox-container{
     display: flex;
 }
 .box{
@@ -66,10 +76,10 @@
     height: 200px;
     margin: 10px;
 }
-            </pre>
+</code></pre>
                             </div>
                             <div class="box fillx2">
-                                <pre>
+                                <pre><code class="language-markup">
 &lt;div class=&quot;flexbox-container&quot;&gt;
     &lt;div class=&quot;box orange&quot;&gt;1&lt;/div&gt;
     &lt;div class=&quot;box darkcyan&quot;&gt;2&lt;/div&gt;
@@ -77,7 +87,8 @@
     &lt;div class=&quot;box cyan&quot;&gt;4&lt;/div&gt;
     &lt;div class=&quot;box lightpink&quot;&gt;5&lt;/div&gt;
 &lt;/div&gt;
-                    </pre>
+
+</code></pre>
                             </div>
 
                         </div>
@@ -116,8 +127,7 @@
                         </p>
                         <div class="flexbox-container">
                             <div class="box fill">
-                                <pre>
-.flexbox-container{
+                                <pre><code class="language-css">.flexbox-container{
     display: flex;
 }
 .flexbox-container.wrap{
@@ -128,17 +138,20 @@
     height: 200px;
     margin: 10px;
 }
-            </pre>
+</code></pre>
                             </div>
                             <div class="box fillx2">
-                                <pre>
-&lt;div class=&quot;flexbox-container wrap&quot;&gt;
+                                <pre><code class="language-markup">
+ &lt;div class=&quot;flexbox-container wrap&quot;&gt;
     &lt;div class=&quot;box orange&quot;&gt;1&lt;/div&gt;
     &lt;div class=&quot;box darkcyan&quot;&gt;2&lt;/div&gt;
     &lt;div class=&quot;box darkolivegreen&quot;&gt;3&lt;/div&gt;
     &lt;div class=&quot;box cyan&quot;&gt;4&lt;/div&gt;
     &lt;div class=&quot;box lightpink&quot;&gt;5&lt;/div&gt;
 &lt;/div&gt;
+                                    
+                                    
+</code>
                     </pre>
                             </div>
 
@@ -181,8 +194,7 @@
                         </p>
                         <div class="flexbox-container">
                             <div class="box fill">
-                                <pre>
-.flexbox-container{
+                                <pre><code class="language-css">.flexbox-container{
     display: flex;
 }
 .fixed-height-500{ 
@@ -199,10 +211,10 @@
     height: 200px;
     margin: 10px;
 }
-            </pre>
+                                    </code></pre>
                             </div>
                             <div class="box fillx2">
-                                <pre>
+                                <pre><code class="language-markup">
 &lt;div class=&quot;flexbox-container column wrap fixed-height-500&quot;&gt;
     &lt;div class=&quot;box orange&quot;&gt;1&lt;/div&gt;
     &lt;div class=&quot;box darkcyan&quot;&gt;2&lt;/div&gt;
@@ -210,7 +222,19 @@
     &lt;div class=&quot;box cyan&quot;&gt;4&lt;/div&gt;
     &lt;div class=&quot;box lightpink&quot;&gt;5&lt;/div&gt;
 &lt;/div&gt;
-                    </pre>
+                                    
+                                    
+
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                    </code></pre>
                             </div>
                         </div>
                         <figure>
@@ -240,8 +264,7 @@
                         </p>
                         <div class="flexbox-container">
                             <div class="box fill">
-                                <pre>
-.flexbox-container{
+                                <pre><code class="language-css">.flexbox-container{
     display: flex;
 }
 .first{
@@ -263,11 +286,12 @@
     width: 200px;
     height: 200px;
     margin: 10px;
-}
-            </pre>
+}</code></pre>
                             </div>
                             <div class="box fillx2">
                                 <pre>
+                                <code class="language-markup">
+
 &lt;div class=&quot;flexbox-container&quot;&gt;
     &lt;div class=&quot;box orange fourth &quot;&gt;1&lt;/div&gt;
     &lt;div class=&quot;box darkcyan third&quot;&gt;2&lt;/div&gt;
@@ -275,6 +299,20 @@
     &lt;div class=&quot;box cyan second&quot;&gt;4&lt;/div&gt;
     &lt;div class=&quot;box lightpink first&quot;&gt;5&lt;/div&gt;
 &lt;/div&gt;
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                    
+                                    
+                                    
+                                    
+                                    
+
+
+                                    </code>
                     </pre>
                             </div>
                         </div>
@@ -319,8 +357,7 @@
                         </p>
                         <div class="flexbox-container">
                             <div class="box fill">
-                                <pre>
-.flexbox-container{
+                                <pre><code class="language-css">.flexbox-container{
     display: flex;
 }
 .fill{
@@ -334,15 +371,27 @@
     height: 200px;
     margin: 10px;
 }
+                                    </code>
             </pre>
                             </div>
                             <div class="box fillx2">
-                                <pre>
+                                <pre><code class="language-markup">
+                                    
 &lt;div class=&quot;flexbox-container&quot;&gt;
     &lt;div class=&quot;box orange fill&quot;&gt;1&lt;/div&gt;
     &lt;div class=&quot;box darkcyan fillx2&quot;&gt;2&lt;/div&gt;
     &lt;div class=&quot;box darkolivegreen &quot;&gt;3&lt;/div&gt;
 &lt;/div&gt;
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                    
+                                    </code>
                     </pre>
                             </div>
                         </div>
@@ -392,8 +441,7 @@
 
                         <div class="flexbox-container">
                             <div class="box fill">
-                                <pre>
-.flexbox-container{
+                                <pre><code class="language-css">.flexbox-container{
     display: flex;
 }
 .flexbox-container.flow-direction-centered{
@@ -407,11 +455,10 @@
 .box.smaller{
     width: 100px;
     height: 100px;
-}
-            </pre>
+}</code></pre>
                             </div>
                             <div class="box fillx2">
-                                <pre>
+                                <pre><code class="language-markup">
 &lt;div class=&quot;flexbox-container flow-direction-centered&quot;&gt;
     &lt;div class=&quot;box orange&quot;&gt;1&lt;/div&gt;
     &lt;div class=&quot;box darkcyan&quot;&gt;2&lt;/div&gt;
@@ -419,6 +466,13 @@
     &lt;div class=&quot;box cyan&quot;&gt;4&lt;/div&gt;
     &lt;div class=&quot;box lightpink&quot;&gt;5&lt;/div&gt;
 &lt;/div&gt;
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    </code>
                     </pre>
                             </div>
                         </div>
@@ -451,9 +505,6 @@
                             </figcaption>
                         </figure>
 
-
-
-
                         <h3>Aligning Items in the Flow Perpendicular Direction</h3>
                         <p>
                             The <span class="code">align-items</span> CSS rule you
@@ -476,14 +527,12 @@
                                 </li>
                             </ul>
                         </p>
-                        With the
                         <p>
                             This finally provides <strong> a good way to achieve centering an element in height</strong>.
                         </p>
                         <div class="flexbox-container">
                             <div class="box fill">
-                                <pre>
-.flexbox-container{
+                                <pre><code class="language-css">.flexbox-container{
     display: flex;
 }
 .flexbox-container.centered{
@@ -493,11 +542,10 @@
     width: 200px;
     height: 200px;
     margin: 10px;
-}
-            </pre>
+}</code></pre>
                             </div>
                             <div class="box fillx2">
-                                <pre>
+                                <pre><code class="language-markup">
 &lt;div class=&quot;flexbox-container centered&quot;&gt;
     &lt;div class=&quot;box orange&quot;&gt;1&lt;/div&gt;
     &lt;div class=&quot;box darkcyan&quot;&gt;2&lt;/div&gt;
@@ -505,6 +553,8 @@
     &lt;div class=&quot;box cyan&quot;&gt;4&lt;/div&gt;
     &lt;div class=&quot;box lightpink&quot;&gt;5&lt;/div&gt;
 &lt;/div&gt;
+                                    
+                                    </code>
                     </pre>
                             </div>
                         </div>
@@ -560,8 +610,105 @@
                                 You can override a single element aligment with self-align
                             </figcaption>
                         </figure>
-                    </section>
 
+                        <h3>Aligning Content form Multiple Rows or Columns</h3>
+                        <p>
+                            When you have flexbox elements distributed in multiple rows or columns
+                            you can use the <span class="code">align-content</span> CSS rule to
+                            determine how these multiple rows/columns are aligned in relation to each
+                            other. The options available are the same that with the
+                            <span class="code">justify-content</span> rule.
+                        </p>
+                        <div class="flexbox-container">
+                            <div class="box fill">
+                                <pre><code class="language-css">.flexbox-container{
+    display: flex;
+}
+.flexbox-container.align-content-start{
+    align-content: flex-start;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+.box.smaller{
+    width: 100px;
+    height: 100px;
+}
+                                    </code></pre>
+                            </div>
+                            <div class="box fillx2">
+                                <pre><code class="language-markup">
+&lt;div class=&quot;flexbox-container wrap aquamarine-nearly-transparent fixed-height-500 align-content-start&quot;&gt;
+    &lt;div class=&quot;box orange&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;box cyan&quot;&gt;4&lt;/div&gt;
+    &lt;div class=&quot;box lightpink&quot;&gt;5&lt;/div&gt;
+    &lt;div class=&quot;box orange&quot;&gt;6&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan&quot;&gt;7&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen&quot;&gt;8&lt;/div&gt;
+    &lt;div class=&quot;box cyan&quot;&gt;9&lt;/div&gt;
+    &lt;div class=&quot;box lightpink&quot;&gt;10&lt;/div&gt;
+    &lt;div class=&quot;box orange&quot;&gt;11&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan&quot;&gt;12&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen&quot;&gt;13&lt;/div&gt;
+    &lt;div class=&quot;box cyan&quot;&gt;14&lt;/div&gt;
+    &lt;div class=&quot;box lightpink&quot;&gt;15&lt;/div&gt;
+&lt;/div&gt; </code>
+                    </pre>
+                            </div>
+                        </div>
+                        <figure>
+                            <div class="flexbox-container wrap aquamarine-nearly-transparent fixed-height-500 align-content-start">
+                                <div class="box smaller orange">1</div>
+                                <div class="box smaller darkcyan">2</div>
+                                <div class="box smaller darkolivegreen">3</div>
+                                <div class="box smaller cyan">4</div>
+                                <div class="box smaller lightpink">5</div>
+                                <div class="box smaller orange">6</div>
+                                <div class="box smaller darkcyan">7</div>
+                                <div class="box smaller darkolivegreen">8</div>
+                                <div class="box smaller cyan">9</div>
+                                <div class="box smaller lightpink">10</div>
+                                <div class="box smaller orange">11</div>
+                                <div class="box smaller darkcyan">12</div>
+                                <div class="box smaller darkolivegreen">13</div>
+                                <div class="box smaller cyan">14</div>
+                                <div class="box smaller lightpink">15</div>
+                            </div>
+                            <figcaption>
+                                When we have the default flex direction (row/horizontal) and use
+                                the option align-content flex-start all rows are aligned in
+                                the top part of the flexbox container.
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <div class="flexbox-container wrap aquamarine-nearly-transparent fixed-height-500 align-content-spacebetween">
+                                <div class="box smaller orange">1</div>
+                                <div class="box smaller darkcyan">2</div>
+                                <div class="box smaller darkolivegreen">3</div>
+                                <div class="box smaller cyan">4</div>
+                                <div class="box smaller lightpink">5</div>
+                                <div class="box smaller orange">6</div>
+                                <div class="box smaller darkcyan">7</div>
+                                <div class="box smaller darkolivegreen">8</div>
+                                <div class="box smaller cyan">9</div>
+                                <div class="box smaller lightpink">10</div>
+                                <div class="box smaller orange">11</div>
+                                <div class="box smaller darkcyan">12</div>
+                                <div class="box smaller darkolivegreen">13</div>
+                                <div class="box smaller cyan">14</div>
+                                <div class="box smaller lightpink">15</div>
+                            </div>
+                            <figcaption>
+                                This time we use the space-between option to distribute
+                                the rows to cover the whole flexbox container and leave
+                                equal spacing between them.
+                            </figcaption>
+                        </figure>
+                    </section>
                 </section><!-- basics-->
 
 
@@ -606,5 +753,6 @@
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+    <script src="scripts/prism.js"></script>
 </body>
 </html>
