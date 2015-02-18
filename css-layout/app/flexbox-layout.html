@@ -363,7 +363,100 @@
                         <h2 id="flexbox-alignment">Flexbox Alignment</h2>
                         <p>
                             Flexbox is very flexible when it comes to the alignment
-                            of its elements. With the <span class="code">align-items</span> CSS rule you
+                            of its elements and allows you to align elements in the
+                            direction items flow (i.e row - left/right), in the
+                            direction perpendicular to how items flow (i.e. row - up/down)
+                            and also configure how multiple flexbox rows/columns should
+                            align with respect to each other
+                        </p>
+                        <h3>Aligning Items in the Flow Direction</h3>
+                        <p>
+                            You can align the items within your flexbox container by
+                            using the <span class="code">justify-content</span> rule.
+                            This will let you align the different elements:
+                            <ul>
+                                <li>
+                                    at the beginning <span class="code">flex-start</span> <i>(default)</i>, or at the end <span class="code">flex-end</span>
+                                </li>
+                                <li>
+                                    centered with <span class="code">center</span>
+                                </li>
+                                <li>
+                                    with the same amount of space in between elements <span class="code">space-between</span>
+                                </li>
+                                <li>
+                                    with the same amout of space in between and around elements <span class="code">space-around</span>
+                                </li>
+                            </ul>
+                        </p>
+
+                        <div class="flexbox-container">
+                            <div class="box fill">
+                                <pre>
+.flexbox-container{
+    display: flex;
+}
+.flexbox-container.flow-direction-centered{
+    justify-content: center;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+.box.smaller{
+    width: 100px;
+    height: 100px;
+}
+            </pre>
+                            </div>
+                            <div class="box fillx2">
+                                <pre>
+&lt;div class=&quot;flexbox-container flow-direction-centered&quot;&gt;
+    &lt;div class=&quot;box orange&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;box cyan&quot;&gt;4&lt;/div&gt;
+    &lt;div class=&quot;box lightpink&quot;&gt;5&lt;/div&gt;
+&lt;/div&gt;
+                    </pre>
+                            </div>
+                        </div>
+                        <figure>
+                            <div class="flexbox-container aquamarine-nearly-transparent flow-direction-centered">
+                                <div class="box smaller orange">1</div>
+                                <div class="box smaller darkcyan">2</div>
+                                <div class="box smaller darkolivegreen">3</div>
+                                <div class="box smaller cyan">4</div>
+                                <div class="box smaller lightpink">5</div>
+                            </div>
+                            <figcaption>
+                                The different elements are centered in the flow direction with
+                                justify-element as center. In this case the flow direction is
+                                row and therefore the appear centered horizontally.
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <div class="flexbox-container aquamarine-nearly-transparent flow-direction-end">
+                                <div class="box smaller orange">1</div>
+                                <div class="box smaller darkcyan">2</div>
+                                <div class="box smaller darkolivegreen">3</div>
+                                <div class="box smaller cyan">4</div>
+                                <div class="box smaller lightpink">5</div>
+                            </div>
+                            <figcaption>
+                                The different elements are aligned towards the end of the flow direction with
+                                justify-element as end. In this case the flow direction is
+                                row (flow from left to right) and therefore they appear aligned to the right.
+                            </figcaption>
+                        </figure>
+
+
+
+
+                        <h3>Aligning Items in the Flow Perpendicular Direction</h3>
+                        <p>
+                            The <span class="code">align-items</span> CSS rule you
                             can determine whether elements align:
                             <ul>
                                 <li>
@@ -379,10 +472,11 @@
                                     baseline aligned, that is based on their content <span class="code">baseline</span>,
                                 </li>
                                 <li>
-                                    or if they stretch <span class="code">stretch</span>
+                                    or if they stretch <span class="code">stretch</span> <i>(default)</i>
                                 </li>
                             </ul>
                         </p>
+                        With the
                         <p>
                             This finally provides <strong> a good way to achieve centering an element in height</strong>.
                         </p>

@@ -20,6 +20,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 /* alignment */
+.flexbox-container.flow-direction-centered{
+    justify-content: center;
+}
+
+.flexbox-container.flow-direction-end{
+    justify-content: flex-end;
+}
+
 .flexbox-container.centered{
     align-items: center;
 }
