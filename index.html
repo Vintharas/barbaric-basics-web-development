@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html class="no-js">
 <head>
     <meta charset="utf-8">
-    <title>iWrite</title>
+    <title>css layout</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -12,7 +12,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="css-layout/styles/main.css">
     <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
@@ -23,35 +23,25 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <header class="navbar navbar-inverse navbar-fixed-top">
+    <header class="navbar navbar-default">
         <div class="container-fluid">
-
-            <header class="navbar-header">
-                <a class="navbar-brand">iWrite</a>
-            </header>
-
-            <button id="add-file" type="button" class="btn btn-default navbar-btn" title="New file"><i class="glyphicon glyphicon-plus"></i></button>
-            <button id="add-image" type="button" class="btn btn-default navbar-btn" title="New image"><i class="glyphicon glyphicon-pencil"></i></button>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.html">Home</a></li>
-                <li class="active"><a href="#">About</a></li>
+            <section class="navbar-header">
+                <a class="navbar-brand" href="/barbaric-basics-web-development">Barbaric Basics on Web Development</a>
+            </section>
+            <ul class="navbar-nav nav navbar-right">
+                <li class="active"><a href="/barbaric-basics-web-development">Home</a></li>
+                <li><a href="http://www.barbarianmeetscoding.com/blog/categories/barbaric-basics/">About</a></li>
             </ul>
-
         </div>
     </header>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                This project was built by <a href="http://www.barbarianmeetscoding.com">Jaime from barbarianmeetscoding.com</a>
-                and is powered by <a href="http://vanilla-js.com/">VanillaJS</a>.
-                <div class="vanilla">
-                    <span>VanillaJS</span>
-                    <img src="http://vanilla-js.com/assets/vanillin-chemstruct.png" />
-                </div>
-            </div>
+
+        <div class="jumbotron">
+            <h1>Barbaric Basics <small>On Web Development</small></h1>
+            <p class="lead">Finding out about awesome Web Development Stuff</p>
+            <a class="btn btn-lg btn-success" href="iwrite/index.html">Web Workers</a>
+            <a class="btn btn-lg btn-success" href="css-layout/index.html">Css Layout</a>
         </div>
     </div>
 
@@ -83,9 +73,9 @@
         }(window, document, 'script', 'ga'));
         ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
     </script>
-
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+    <script src="scripts/prism.js"></script>
 </body>
 </html>

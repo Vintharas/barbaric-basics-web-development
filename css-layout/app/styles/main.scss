@@ -1,0 +1,184 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+/* Custom styles */
+
+.flexbox-container{
+    display: flex;
+}
+
+/* wrapping */
+.flexbox-container.wrap{
+    flex-wrap: wrap;
+}
+
+/* direction */
+.flexbox-container.column{
+    flex-direction: column;
+}
+
+/* alignment */
+.flexbox-container.flow-direction-centered{
+    justify-content: center;
+}
+
+
+.flexbox-container.flow-direction-end{
+    justify-content: flex-end;
+}
+
+.flexbox-container.centered{
+    align-items: center;
+}
+
+.flexbox-container.start{
+    align-items: flex-start;
+}
+
+.flexbox-container.end{
+    align-items: flex-end;
+}
+
+.flexbox-container.stretch{
+    align-items: stretch;
+}
+
+.flexbox-container.align-content-start{
+    align-content: flex-start;
+}
+
+.flexbox-container.align-content-spacebetween{
+    align-content: space-between;
+}
+
+
+.box.centered{
+    align-self: center;
+}
+
+.box.start{
+    align-self: flex-start;
+}
+
+.box.end{
+    align-self: flex-end;
+}
+
+.box.stretch{
+    align-self: stretch;
+}
+
+.box{
+    width: 200px;
+    min-height: 200px;
+    margin: 10px;
+    padding: 10px;
+    font: bold 3em Arial;
+    color: #222;
+}
+.box.smaller{
+    width: 100px;
+    min-height: 100px;
+}
+
+.box pre{
+    font-weight: 100;
+}
+
+/* flex property, relative sizing */
+
+.box.fill{
+    flex: 1;
+}
+
+.box.fillx2{
+    flex: 2;
+}
+
+/* colors */
+.orange{
+    background-color: orange;
+}
+
+.darkcyan{
+    background-color: darkcyan;
+}
+
+.cyan{
+    background-color: cyan;
+}
+
+.darkolivegreen{
+    background-color: darkolivegreen;
+}
+
+.lightpink{
+    background-color: lightpink;
+}
+
+.aquamarine-nearly-transparent{
+    background-color: rgba(107, 255, 250, 0.10);
+}
+
+/* flex order */
+
+.first{
+  order: 1;
+}
+.second{
+  order: 2;
+}
+.third{
+  order: 3;
+}
+.fourth{
+  order: 4;
+}
+.fifth{
+  order: 5;
+}
+
+/* typography */
+
+span.code{
+    font-family: monospace;
+    padding: 1px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.428571429;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #333333;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+figure figcaption{
+    text-align: center;
+    font-size: .8em;
+    color: #666;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 75%;
+    margin: 10px auto;
+    padding: 3px;
+}
+
+/* helpers */
+
+.fixed-height-500{
+    height: 500px;
+}
+
+.fixed-height-300{
+    height: 300px;
+}
+
+/* footer */
+footer{
+    height:50px;
+}
