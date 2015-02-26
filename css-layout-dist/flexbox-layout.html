@@ -1,0 +1,246 @@
+<!DOCTYPE html> <html class=no-js> <head> <meta charset=utf-8> <title>css layout</title> <meta name=description content=""> <meta name=viewport content="width=device-width"> <link rel="shortcut icon" href=/6df2b309.favicon.ico> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel=stylesheet href=styles/prism.css> <link rel=stylesheet href=styles/66dbb628.main.css> <script src=scripts/vendor/fbe20327.modernizr.js></script>  <body> <!--[if lt IE 10]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--> <header class="navbar navbar-default"> <div class=container-fluid> <section class=navbar-header> <a class=navbar-brand href=/barbaric-basics-web-development/css-layout.html>css layout</a> </section> <ul class="navbar-nav nav navbar-right"> <li class=active><a href=/barbaric-basics-web-development>Home</a></li> <li><a href=/about.html>About</a></li> </ul> </div> </header> <div class=container> <div class=row> <div class="col-md-8 col-md-offset-2"> <div class=jumbotron> <h1>Flexbox Layout</h1> <p class=lead>Flexbox lets you build flex-ible layouts!</p> <p> </p> </div> <section> <h1>Flex-box Basics</h1> <nav> <ol> <li><a href=#flexbox-basic>Basic Flexbox</a></li> <li><a href=#flexbox-wrap>Flexbox Wrapping</a></li> <li><a href=#flexbox-direction>Flexbox Direction</a></li> <li><a href=#flexbox-order>Flexbox Order</a></li> <li><a href=#flexbox-automatic-sizing>Flexbox Automatic Sizing</a></li> <li><a href=#flexbox-alignment>Flexbox Alignment</a></li> </ol> </nav> <!-- Flexbox Basic --> <section> <h2 id=flexbox-basic>Flex-box </h2> <p> By default flexbox positions elements within a single row. Note how all divs within the row are distributed equally and have the same width. </p> <div class=flexbox-container> <div class="box fill"> <pre><code class=language-css>.flexbox-container{
+    display: flex;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+</code></pre> </div> <div class="box fillx2"> <pre><code class=language-markup>
+&lt;div class=&quot;flexbox-container&quot;&gt;
+    &lt;div class=&quot;box orange&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;box cyan&quot;&gt;4&lt;/div&gt;
+    &lt;div class=&quot;box lightpink&quot;&gt;5&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre> </div> </div> <figure> <div class=flexbox-container> <div class="box orange"> 1 </div> <div class="box darkcyan">2</div> <div class="box darkolivegreen">3</div> <div class="box cyan">4</div> <div class="box lightpink">5</div> </div> <figcaption> With all defaults, five flexbox elements evenly distribute themselves within a single row </figcaption> </figure> </section> <!-- Flexbox wrapping --> <section> <h2 id=flexbox-wrap>Flex-box wrap</h2> <p> You can specify the wrapping behavior of the elements within a flexbox container, that is, how the elements should be distributed when, in a normal situation, they wouldn't fit within a single row. </p> <p> You use the <span class=code>flex-wrap</span> CSS rule and set it to: <ul> <li><span class=code>nowrap</span> for no wrapping (single line)</li> <li><span class=code>wrap</span> for wrapping behavior as depicted below</li> <li><span class=code>wrap-reverse</span> for wrapping in the reverse direction (right to left)</li> </ul> </p> <div class=flexbox-container> <div class="box fill"> <pre><code class=language-css>.flexbox-container{
+    display: flex;
+}
+.flexbox-container.wrap{
+    flex-wrap: wrap;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+</code></pre> </div> <div class="box fillx2"> <pre><code class=language-markup>
+ &lt;div class=&quot;flexbox-container wrap&quot;&gt;
+    &lt;div class=&quot;box orange&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;box cyan&quot;&gt;4&lt;/div&gt;
+    &lt;div class=&quot;box lightpink&quot;&gt;5&lt;/div&gt;
+&lt;/div&gt;
+                                    
+                                    
+</code>
+                    </pre> </div> </div> <figure> <div class="flexbox-container wrap"> <div class="box orange">1</div> <div class="box darkcyan">2</div> <div class="box darkolivegreen">3</div> <div class="box cyan">4</div> <div class="box lightpink">5</div> </div> <figcaption> When we set the wrap property, the elements take their natural width of 200px and jump to the next row. </figcaption> </figure> </section> <!-- Flexbox direction --> <section> <h2 id=flexbox-direction>Flex-box direction</h2> <p> You can also specify the direction in which the different elements within a flexbox container are placed by using the <span class=code>flex-direction</span> property: <ul> <li><span class=code>row</span>, to place the items within a row from left to right</li> <li><span class=code>column</span>, to place the items within a column from top to bottom</li> <li><span class=code>row-reverse</span>, as above but from right to left</li> <li><span class=code>column-reverse</span>, as above but from bottom to top</li> </ul> In sumary, this will determine whether your flexbox elements are placed in columns or rows. </p> <p> Note that there is a shortcut property <span class=code>flex-flow</span> that allows you to set both <span class=code>flex-direction</span> and <span class=code>flex-wrap</span> at the same time. For instance <span class=code>flex-flow: column wrap</span> </p> <div class=flexbox-container> <div class="box fill"> <pre><code class=language-css>.flexbox-container{
+    display: flex;
+}
+.fixed-height-500{ 
+    height: 500px;   
+}
+.flexbox-container.wrap{
+    flex-wrap: wrap;
+}
+.flexbox-container.column{
+    flex-direction: column;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+                                    </code></pre> </div> <div class="box fillx2"> <pre><code class=language-markup>
+&lt;div class=&quot;flexbox-container column wrap fixed-height-500&quot;&gt;
+    &lt;div class=&quot;box orange&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;box cyan&quot;&gt;4&lt;/div&gt;
+    &lt;div class=&quot;box lightpink&quot;&gt;5&lt;/div&gt;
+&lt;/div&gt;
+                                    
+                                    
+
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                    </code></pre> </div> </div> <figure> <div class="flexbox-container wrap column fixed-height-500"> <div class="box orange">1</div> <div class="box darkcyan">2</div> <div class="box darkolivegreen">3</div> <div class="box cyan">4</div> <div class="box lightpink">5</div> </div> <figcaption> Instead of the default direction, the flexbox container now uses column. This makes the flexbox elements flow from top to bottom in columns instead of rows. Since have set the width of the parent element to 500 and flex-wrap to wrap the elements that do now fit jump to the next column. </figcaption> </figure> </section> <!-- Flexbox order --> <section> <h2 id=flexbox-order>Flex-box Order</h2> <p> With the <span class=code>order</span> CSS property you can specify the order in which each flexbox element appears explicitely: </p> <div class=flexbox-container> <div class="box fill"> <pre><code class=language-css>.flexbox-container{
+    display: flex;
+}
+.first{
+  order: 1;
+}
+.second{
+  order: 2;
+}
+.third{
+  order: 3;
+}
+.fourth{
+  order: 4;
+}
+.fifth{
+  order: 5;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}</code></pre> </div> <div class="box fillx2"> <pre>
+                                <code class=language-markup>
+
+&lt;div class=&quot;flexbox-container&quot;&gt;
+    &lt;div class=&quot;box orange fourth &quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan third&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen fifth&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;box cyan second&quot;&gt;4&lt;/div&gt;
+    &lt;div class=&quot;box lightpink first&quot;&gt;5&lt;/div&gt;
+&lt;/div&gt;
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                    
+                                    
+                                    
+                                    
+                                    
+
+
+                                    </code>
+                    </pre> </div> </div> <figure> <div class=flexbox-container> <div class="box orange fourth">1</div> <div class="box darkcyan third">2</div> <div class="box darkolivegreen fifth">3</div> <div class="box cyan second">4</div> <div class="box lightpink first">5</div> </div> <figcaption> The order property overrides the natural order of the elements. </figcaption> </figure> </section> <!-- Flexbox automatic sizing --> <section> <h2 id=flexbox-automatic-sizing>Flex-box Automatic Sizing and Space Distribution</h2> <p> The <span class=code>flex</span> CSS property lets you specify how the space should be distributed amongst the different flexbox items in relative terms. For instance, if you have two elements and set <span class=code>flex: 2;</span> for the first one and <span class=code>flex: 1;</span> for the second one, the first element will take double the amount of space (width or height based on whether flexbox direction is row or column). </p> <p> If no <span class=code>flex</span> property is set then the flexbox elements will just take their normal space. (Their specific width/height based on <span class=code>width</span> or <span class=code>height</span> or their contents) </p> <p> The <span class=code>flex</span> property is actually a short-hand syntax for <span code=code>flex-grow</span>, <span code=code>flex-shrink</span> and <span code=code>flex-basis</span> which determines how flex elements can grow, shrink if allowed and their default size respectively. </p> <div class=flexbox-container> <div class="box fill"> <pre><code class=language-css>.flexbox-container{
+    display: flex;
+}
+.fill{
+    flex: 1;
+}
+.fillx2{
+    flex: 2;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+                                    </code>
+            </pre> </div> <div class="box fillx2"> <pre><code class=language-markup>
+                                    
+&lt;div class=&quot;flexbox-container&quot;&gt;
+    &lt;div class=&quot;box orange fill&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan fillx2&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen &quot;&gt;3&lt;/div&gt;
+&lt;/div&gt;
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                    
+                                    </code>
+                    </pre> </div> </div> <figure> <div class=flexbox-container> <div class="box orange fill">1</div> <div class="box darkcyan fillx2">2</div> <div class="box darkolivegreen fill">3</div> </div> <figcaption> The element in the middle takes up two times the size of the other two elements </figcaption> </figure> </section> <!-- Flexbox automatic sizing --> <section> <h2 id=flexbox-alignment>Flexbox Alignment</h2> <p> Flexbox is very flexible when it comes to the alignment of its elements and allows you to align elements in the direction items flow (i.e row - left/right), in the direction perpendicular to how items flow (i.e. row - up/down) and also configure how multiple flexbox rows/columns should align with respect to each other </p> <h3>Aligning Items in the Flow Direction</h3> <p> You can align the items within your flexbox container by using the <span class=code>justify-content</span> rule. This will let you align the different elements: <ul> <li> at the beginning <span class=code>flex-start</span> <i>(default)</i>, or at the end <span class=code>flex-end</span> </li> <li> centered with <span class=code>center</span> </li> <li> with the same amount of space in between elements <span class=code>space-between</span> </li> <li> with the same amout of space in between and around elements <span class=code>space-around</span> </li> </ul> </p> <div class=flexbox-container> <div class="box fill"> <pre><code class=language-css>.flexbox-container{
+    display: flex;
+}
+.flexbox-container.flow-direction-centered{
+    justify-content: center;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+.box.smaller{
+    width: 100px;
+    height: 100px;
+}</code></pre> </div> <div class="box fillx2"> <pre><code class=language-markup>
+&lt;div class=&quot;flexbox-container flow-direction-centered&quot;&gt;
+    &lt;div class=&quot;box orange&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;box cyan&quot;&gt;4&lt;/div&gt;
+    &lt;div class=&quot;box lightpink&quot;&gt;5&lt;/div&gt;
+&lt;/div&gt;
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    </code>
+                    </pre> </div> </div> <figure> <div class="flexbox-container aquamarine-nearly-transparent flow-direction-centered"> <div class="box smaller orange">1</div> <div class="box smaller darkcyan">2</div> <div class="box smaller darkolivegreen">3</div> <div class="box smaller cyan">4</div> <div class="box smaller lightpink">5</div> </div> <figcaption> The different elements are centered in the flow direction with justify-element as center. In this case the flow direction is row and therefore the appear centered horizontally. </figcaption> </figure> <figure> <div class="flexbox-container aquamarine-nearly-transparent flow-direction-end"> <div class="box smaller orange">1</div> <div class="box smaller darkcyan">2</div> <div class="box smaller darkolivegreen">3</div> <div class="box smaller cyan">4</div> <div class="box smaller lightpink">5</div> </div> <figcaption> The different elements are aligned towards the end of the flow direction with justify-element as end. In this case the flow direction is row (flow from left to right) and therefore they appear aligned to the right. </figcaption> </figure> <h3>Aligning Items in the Flow Perpendicular Direction</h3> <p> The <span class=code>align-items</span> CSS rule you can determine whether elements align: <ul> <li> at the start <span class=code>flex-start</span>, or </li> <li> at the end <span class=code>flex-end</span>, </li> <li> whether they are center aligned <span class=code>center</span>, </li> <li> baseline aligned, that is based on their content <span class=code>baseline</span>, </li> <li> or if they stretch <span class=code>stretch</span> <i>(default)</i> </li> </ul> </p> <p> This finally provides <strong> a good way to achieve centering an element in height</strong>. </p> <div class=flexbox-container> <div class="box fill"> <pre><code class=language-css>.flexbox-container{
+    display: flex;
+}
+.flexbox-container.centered{
+    align-items: center;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}</code></pre> </div> <div class="box fillx2"> <pre><code class=language-markup>
+&lt;div class=&quot;flexbox-container centered&quot;&gt;
+    &lt;div class=&quot;box orange&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;box cyan&quot;&gt;4&lt;/div&gt;
+    &lt;div class=&quot;box lightpink&quot;&gt;5&lt;/div&gt;
+&lt;/div&gt;
+                                    
+                                    </code>
+                    </pre> </div> </div> <figure> <div class="flexbox-container aquamarine-nearly-transparent fixed-height-300 centered"> <div class="box smaller orange">1</div> <div class="box smaller darkcyan">2</div> <div class="box smaller darkolivegreen">3</div> <div class="box smaller cyan">4</div> <div class="box smaller lightpink">5</div> </div> <figcaption> The different elements are centered in height. I have set a fixed height to the parent container so the aligment it is easier to see </figcaption> </figure> <figure> <div class="flexbox-container aquamarine-nearly-transparent fixed-height-300 start"> <div class="box smaller orange">1</div> <div class="box smaller darkcyan">2</div> <div class="box smaller darkolivegreen">3</div> <div class="box smaller cyan">4</div> <div class="box smaller lightpink">5</div> </div> <figcaption> The different elements are centered at the top. </figcaption> </figure> <figure> <div class="flexbox-container aquamarine-nearly-transparent fixed-height-300 stretch"> <div class="box smaller orange">1</div> <div class="box smaller darkcyan">2</div> <div class="box smaller darkolivegreen">3</div> <div class="box smaller cyan">4</div> <div class="box smaller lightpink">5</div> </div> <figcaption> The different elements are stretched </figcaption> </figure> <figure> <div class="flexbox-container aquamarine-nearly-transparent fixed-height-300 start"> <div class="box smaller orange">1</div> <div class="box smaller darkcyan end">2</div> <div class="box smaller darkolivegreen">3</div> <div class="box smaller cyan">4</div> <div class="box smaller lightpink stretch">5</div> </div> <figcaption> You can override a single element aligment with self-align </figcaption> </figure> <h3>Aligning Content form Multiple Rows or Columns</h3> <p> When you have flexbox elements distributed in multiple rows or columns you can use the <span class=code>align-content</span> CSS rule to determine how these multiple rows/columns are aligned in relation to each other. The options available are the same that with the <span class=code>justify-content</span> rule. </p> <div class=flexbox-container> <div class="box fill"> <pre><code class=language-css>.flexbox-container{
+    display: flex;
+}
+.flexbox-container.align-content-start{
+    align-content: flex-start;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+.box.smaller{
+    width: 100px;
+    height: 100px;
+}
+                                    </code></pre> </div> <div class="box fillx2"> <pre><code class=language-markup>
+&lt;div class=&quot;flexbox-container wrap aquamarine-nearly-transparent fixed-height-500 align-content-start&quot;&gt;
+    &lt;div class=&quot;box orange&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;box cyan&quot;&gt;4&lt;/div&gt;
+    &lt;div class=&quot;box lightpink&quot;&gt;5&lt;/div&gt;
+    &lt;div class=&quot;box orange&quot;&gt;6&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan&quot;&gt;7&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen&quot;&gt;8&lt;/div&gt;
+    &lt;div class=&quot;box cyan&quot;&gt;9&lt;/div&gt;
+    &lt;div class=&quot;box lightpink&quot;&gt;10&lt;/div&gt;
+    &lt;div class=&quot;box orange&quot;&gt;11&lt;/div&gt;
+    &lt;div class=&quot;box darkcyan&quot;&gt;12&lt;/div&gt;
+    &lt;div class=&quot;box darkolivegreen&quot;&gt;13&lt;/div&gt;
+    &lt;div class=&quot;box cyan&quot;&gt;14&lt;/div&gt;
+    &lt;div class=&quot;box lightpink&quot;&gt;15&lt;/div&gt;
+&lt;/div&gt; </code>
+                    </pre> </div> </div> <figure> <div class="flexbox-container wrap aquamarine-nearly-transparent fixed-height-500 align-content-start"> <div class="box smaller orange">1</div> <div class="box smaller darkcyan">2</div> <div class="box smaller darkolivegreen">3</div> <div class="box smaller cyan">4</div> <div class="box smaller lightpink">5</div> <div class="box smaller orange">6</div> <div class="box smaller darkcyan">7</div> <div class="box smaller darkolivegreen">8</div> <div class="box smaller cyan">9</div> <div class="box smaller lightpink">10</div> <div class="box smaller orange">11</div> <div class="box smaller darkcyan">12</div> <div class="box smaller darkolivegreen">13</div> <div class="box smaller cyan">14</div> <div class="box smaller lightpink">15</div> </div> <figcaption> When we have the default flex direction (row/horizontal) and use the option align-content flex-start all rows are aligned in the top part of the flexbox container. </figcaption> </figure> <figure> <div class="flexbox-container wrap aquamarine-nearly-transparent fixed-height-500 align-content-spacebetween"> <div class="box smaller orange">1</div> <div class="box smaller darkcyan">2</div> <div class="box smaller darkolivegreen">3</div> <div class="box smaller cyan">4</div> <div class="box smaller lightpink">5</div> <div class="box smaller orange">6</div> <div class="box smaller darkcyan">7</div> <div class="box smaller darkolivegreen">8</div> <div class="box smaller cyan">9</div> <div class="box smaller lightpink">10</div> <div class="box smaller orange">11</div> <div class="box smaller darkcyan">12</div> <div class="box smaller darkolivegreen">13</div> <div class="box smaller cyan">14</div> <div class="box smaller lightpink">15</div> </div> <figcaption> This time we use the space-between option to distribute the rows to cover the whole flexbox container and leave equal spacing between them. </figcaption> </figure> </section> </section><!-- basics--> <section> <h1> Example layouts </h1> <p> Flexbox excels at helping you create flexible layouts that gracefully adapt to the viewport of whichever device you're using. Check these example layouts and the description of what I did in each one of them below: <ul> <li><a href=flexbox-example-blog.html>A blog</a></li> <li><a href=flexbox-example-image-gallery.html>An image gallery</a></li> <li><a href=flexbox-example-news-site.html>A news site</a></li> <li><a href=flexbox-example-single-page-app.html>A single page app</a></li> </ul> </p> <article> <h2>Blog</h2> </article> <article> <h2>Image Gallery</h2> </article> <article> <h2>News Site</h2> </article> <article> <h2>Single Page App</h2> </article> </section> </div><!-- col --> </div><!-- row --> </div><!-- container --> <footer></footer> <script src=scripts/5987e2ba.vendor.js></script> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --> <script>(function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+            function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+            e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');</script> <script src=scripts/b6c3df09.main.js></script> <script src=scripts/prism.js></script>  
