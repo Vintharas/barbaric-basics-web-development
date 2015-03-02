@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Barbarian meets coding - Flexbox - Example App - BLOG!</title>
@@ -12,57 +12,72 @@
 
 </head>
 <body>
-    <header>
+    <header class="flex-container">
         <section class="brand">
-            <h1>Catbarian Meets Coding</h1> 
+            <h1>Catbarian Meets Coding</h1>
         </section>
-        <nav>
-            <ul>
+        <nav class="flex-container">
+            <ul class="flex-container">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Wiki</a></li>
                 <li><a href="#">Cat Photos</a></li>
-                <li><button class="btn btn-default">Show Me The Flex!</button></li>
+                <li><button id="show-me-the-flex" class="btn btn-default">Show Me The Flex!</button></li>
             </ul>
         </nav>
     </header>
-    <section class="main-content">
+    <section class="main-content flex-container">
         <section>
+            <article>
+                <h1>Meeeeouuuuuw</h1>
+                <time></time>
+                <p class="lead">Meeeou meouewww meowwww grrrrr meooow meouuuuuuwww...</p>
+                <p>Meeeou meowwww grrrrr meooow meouuuuuuwww meouewww brrr brr meouwwwww meeeeeouuuuuu brrr brr meouwwwww meeeeeouuuuuww.<p>
+                <button class="btn btn-primary">Read More</button>
+            </article>
+            <article>
+                <h1>I am becoming a Cat</h1>
+                <p class="lead">Yesterday I was so hungry and I am a hippster so I said, why not? Why not eat my cat?...</p>
+                <button class="btn btn-primary">Read More</button>
+            </article>
+            </article>
             <article>
                 <h1>I Ate my Own Cat</h1>
                 <p class="lead">Yesterday I was so hungry and I am a hippster so I said, why not? Why not eat my cat?...</p>
                 <p>dflfalsdflafas</p>
-                <button>More</button>
+                <button class="btn btn-primary">Read More</button>
             </article>
             <article>
                 <h1>I am hungry</h1>
                 <p class="lead">Yesterday I was so hungry and I am a hippster so I said, why not? Why not eat my cat?...</p>
-            </article>
-            <article>
-                <h1>I am hungry</h1>
-                <p class="lead">Yesterday I was so hungry and I am a hippster so I said, why not? Why not eat my cat?...</p>
-            </article>
-            <article>
-                <h1>I am hungry</h1>
-                <p class="lead">Yesterday I was so hungry and I am a hippster so I said, why not? Why not eat my cat?...</p>
+                <button class="btn btn-primary">Read More</button>
             </article>
         </section>
         <aside>
             <section class="my-bio">
-                <figure>
+                <figure class="flex-container">
                     <img src="images/cat-suit.jpg" width="200" />
                     <figcaption>
-                        Hi! I am William Shakespeare the IIIrd, welcome to my blog! Hope you Like it!
+                        Hi! I am William Catspeare the IIIrd, I love playing with yarn and hunting mice. Welcome to my blog! Hope you Like it! Meeeeouw.
                     </figcaption>
                 </figure>
-            </section>      
-            <section class="best-articles">
-                
             </section>
         </aside>
     </section>
-    <footer>
-        
+    <footer class="flex-container">
+      <p>Copyright 2015 Catbarian meets coding.</p>
     </footer>
 </body>
+<!-- show me the flex -->
+<script>
+window.addEventListener('load', function(){
+  var btn = document.getElementById("show-me-the-flex");
+  btn.addEventListener('click', showFlexContainers);
+
+  function showFlexContainers(){
+    var flexContainers = document.querySelectorAll("flex-container");
+    flexContainers.forEach(function(c) { c.style.border = "solid 2px red;";})
+  }
+});
+</script>
 </html>
