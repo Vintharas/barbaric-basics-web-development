@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "file": "",
+  "sources": ["app/styles/image-gallery.scss"],
+  "names": [],
+  "mappings": "AAAA,OAAO;EACL,SAAS;EACT,WAAW;EACX,iBAAiB;EACjB,eAAe;EACf,aAAa;EACb,YAAY;;AAGd;EACE,OAAO;EACP,YAAY;;AAGd,GAAG;EACD,OAAO"
+}

@@ -1,0 +1,16 @@
+body > * {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center; }
+
+img {
+  width: 200px;
+  transition: all 2s; }
+
+img:hover {
+  width: 400px; }
+
+/*# sourceMappingURL=image-gallery.css.map */
