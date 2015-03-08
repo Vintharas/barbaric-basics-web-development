@@ -37,13 +37,16 @@
             </article>
             <article>
                 <h1>I am becoming a Cat</h1>
-                <p class="lead">Yesterday I was so hungry and I am a hippster so I said, why not? Why not eat my cat?...</p>
+                <p class="lead">I think something very weird is going on with me... </p>
+                <p>
+                  I have never liked tuna, but since yesterday I cannot get enough of it. I have also developed a huge fondness for my former cats yarn plaything. Could it be true? Am I becoming a cat?
+                </p>
                 <button class="btn btn-primary">Read More</button>
             </article>
             </article>
             <article>
                 <h1>I Ate my Own Cat</h1>
-                <p class="lead">Yesterday I was so hungry and I am a hippster so I said, why not? Why not eat my cat?...</p>
+                <p class="lead">Holy shit I ate my cat...</p>
                 <p>dflfalsdflafas</p>
                 <button class="btn btn-primary">Read More</button>
             </article>
@@ -75,8 +78,11 @@ window.addEventListener('load', function(){
   btn.addEventListener('click', showFlexContainers);
 
   function showFlexContainers(){
-    var flexContainers = document.querySelectorAll("flex-container");
-    flexContainers.forEach(function(c) { c.style.border = "solid 2px red;";})
+    var flexItems = document.querySelectorAll(".flex-container > *");
+    flexItems = Array.prototype.slice.call(flexItems, 0);
+    flexItems.forEach(function(c) {
+      c.style.border = "dotted 2px red";
+    });
   }
 });
 </script>
